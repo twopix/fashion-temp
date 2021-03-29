@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  font-size: 16px;
+}
+.topheader {
+  font: normal normal normal 10px/14px Open Sans;
+  letter-spacing: 1.6px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  height: 35px;
+  background-color: #151517;
+  line-height: 2rem;
+  text-align: center;
+}
