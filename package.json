@@ -7,16 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "less": "lessc src/less/app.less > dist/css/styles.css",
     "serve": "browser-sync start --server --files 'dist/css/*.css, **/*.html'",
-    "start": "npm run serve && npm run less"
+    "watch:css": "onchange 'src/less' -- npm run less",
+    "start": "run-p serve watch:css"
   },
   "author": "George Melidis",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "less": "^4.1.1",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0"
   },
   "dependencies": {
+    "slick-carousel": "^1.8.1",
     "zeynepjs": "^2.1.0"
   }
 }

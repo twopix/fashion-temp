@@ -14,10 +14,51 @@
 
 <body>
     <div class="site-container">
-        <header>
-            <div class="topheader">δωρεαν μεταφορικα για αγορεσ ανω των 50€ | δωρεαν επιστροφεσ | Τηλ. παραγγελιεσ +30 210 000 0000</div>
+        <div id="top-bar" class="top-bar">
+            <div class="text-white">δωρεαν μεταφορικα για αγορεσ ανω των 50€ | δωρεαν επιστροφεσ | Τηλ. παραγγελιεσ +30 210 000 0000</div>
+        </div>
+        <header class="site-header">
+            <div class="container mid-bar">
+                <div id="site-navigation" class="site-nav item"> 
+                    <div class="site-nav-wrapper">
+                        <span class="toggle-nav visible-phone" data-target="mobile-menu">
+                            <span class="icon-nav"></span>
+                        </span> 
+                        <span class="toggle-nav visible-desktop" data-target="primary-menu">
+                            <span class="icon-nav"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="desktop-logo-wrapper item">
+                    <div id="logo">
+                        <a href="/">
+                            <img src="/src/images/logo.png"
+                                srcset="/src/images/logo.png 1x, /src/images/logo.png 2x"
+                                width="221" height="28" alt="Fashion Design" title="Fashion Design">
+                        </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="header-icon pull-right">
+                        <ul class="hidden-xs hidden-sm hidden-md">
+                            <li class="menu-item menu-item-account"><a href="#" ><span class="icon icon-user"></span></a></li>
+                            <li class="menu-item menu-item-fav"><a href="#" ><span class="icon icon-favorites"></span></a></li>
+                            <li class="menu-item menu-item-cart"> <a href="#" class="cart-contents"> 
+                                    <span class="icon icon-bag"></span>
+                                    <span class="count cart-counter">0</span> </a></li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
         </header>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur tellus a turpis vehicula porttitor
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">X</span>
+            </button>
+        </div>
     </div>
 </body>
+
 
 </html>

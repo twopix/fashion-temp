@@ -1,23 +1,78 @@
 // variables 
 @dark-grey: #151517;
+@color-primary: #EC826D;
+@color-primary-hover: #FC9D8A;
+@color-primary-light: #FCF0EE;
+@font-family: 'Open Sans', sans-serif;
+@font-size: 13px;
 
-* {
-	box-sizing: border-box;
+// default styles
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
 	padding: 0;
 	margin: 0;
-	font-family: 'Open Sans', sans-serif;
-	color: black;
-	font-size: 16px;
+	font-family: @font-family;
+	color: @dark-grey;
+	font-size: @font-size;
 }
 
+button:focus {
+	outline: none
+}
 
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+}
 
+h2 {
+	font-size: 50px;
+	margin-bottom: 58px;
+}
 
+h3 {
+	font-size: 25px;
+	margin-bottom: 28px;
+}
 
-.topheader {    
-  font: normal normal normal 10px/14px Open Sans;
+a {
+	text-decoration: none;
+}
+.pull-right {
+  float: right;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: auto;
+  align-content: start
+}
+.item {
+  flex: 1 0 auto;
+  width: 33%;
+}
+// import less files
+@import "responsive" ;
+@import "components";
+@import "iconmoon";
+@import "menu"; 
+
+// header
+div#logo {
+    margin: 24px auto;
+    text-align: center;
+}
+
+.top-bar {    
+  font-family: @font-family;
+  font-size: 10px;
   letter-spacing: 1.6px;
   color: #FFFFFF;
   text-transform: uppercase; 
@@ -26,4 +81,43 @@ body {
   line-height: 2rem;
   text-align: center;
 
+}
+
+.header-icon {
+    margin: 27px 44px;
+}
+.header-icon ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.header-icon li.menu-item {
+    display: inline-block;
+    margin-right: 25px;
+    font-size: 24px;
+    position: relative;
+
+    .count.cart-counter {
+      top: 0;
+      right: -12px;
+      margin: 0;
+      position: absolute;
+      transform: translateX(-2px);
+      display: inline-flex;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 1);
+      font-weight: 400;
+      background: @color-primary;
+      border-radius: 50px;
+      font-size: 10px;
+      margin-left: 5px;
+      min-width: 1.65em;
+      height: 1.65em;
+      padding: 0 3px;
+      line-height: 1.5;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+    }
 }

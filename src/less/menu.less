@@ -1,0 +1,74 @@
+@icon-width: 37px;
+@icon-height: 30px;
+
+.site-nav-wrapper {
+    display: inline-block;
+    margin:  22px 36px;
+    padding: 3px 0;
+    border-right: 1px solid #E7E7E7;
+}
+
+
+.toggle-nav {
+    color: #000;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: @icon-height;
+    cursor: pointer;
+    margin: 0 40px 0 0;
+    vertical-align: top;
+
+    &.visible-desktop:after {
+    content: "MENU";
+    margin-left: @icon-width + 20px;
+    line-height: @icon-height;
+    font-size: 11px;
+    letter-spacing: .3rem;
+    }
+
+    .icon-nav {
+        position: absolute;
+        border-bottom: 2px solid;
+        top: 50%;
+        left: 0;
+        width: @icon-width;
+        height: 2px;
+        margin-top: -1px;
+        transition: .5s
+    }
+
+    .icon-nav:before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        border-bottom: 2px solid;
+        transition: transform .5s
+    }
+
+    .icon-nav:after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        border-bottom: 2px solid;
+        transition: transform .5s
+    }
+
+    &.active .icon-nav {
+        transform: rotate(45deg);
+        &:before {
+            opacity: 0;
+        }
+        &:after {
+            transform: rotate(90deg);
+            top: 0;
+        }
+    }
+
+}
