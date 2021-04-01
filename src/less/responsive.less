@@ -34,3 +34,170 @@
   .hidden-desktop    { display: inherit !important; }
   .visible-desktop   { display: none !important ; }
 }
+// Grid
+ 
+.lab-grid {
+  width: 100%;
+}
+
+.lab-grid .lab-grid-cell {
+  margin-bottom: 1.5em;
+}
+
+.lab-grid .lab-grid-cell--mb-2x {
+  margin-bottom: 3em;
+}
+
+.lab-grid-cell {
+  padding-left: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-three-quarters {
+  width: 75%;
+}
+
+.w-two-thirds {
+  width: 66.66666%;
+}
+
+.w-half {
+  width: 50%;
+}
+
+.w-third {
+  width: 33.33333%;
+}
+
+.w-quarter {
+  width: 25%;
+}
+
+//  MEDIA SETTINGS
+
+
+@media only screen and (min-width: 320px) and (max-width: 759px) {
+  .carbon-text {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .w-full--d {
+    width: 100%;
+  }
+
+  .w-three-quarters--d {
+    width: 75%;
+  }
+
+  .w-two-thirds--d {
+    width: 66.66666%;
+  }
+
+  .w-half--d {
+    width: 50%;
+  }
+
+  .w-third--d {
+    width: 33.33333%;
+  }
+
+  .w-quarter--d {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .lab-article-link span,
+  .lab-share span {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .lab-follow {
+    display: inline-block;
+    position: fixed;
+    right: -34px;
+    bottom: 20%;
+    transform: rotate(-90deg);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .lab-grid {
+    margin-left: -1.5em;
+    width: calc( 100% + 1.5em );
+  }
+
+  .lab-grid-cell {
+    float: left;
+    padding-left: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+
+  .lab-grid--3 .lab-grid-cell {
+    width: 50%;
+  }
+
+  .w-full--t {
+    width: 100%;
+  }
+
+  .w-three-quarters--t {
+    width: 75%;
+  }
+
+  .w-two-thirds--t {
+    width: 66.66666%;
+  }
+
+  .w-half--t {
+    width: 50%;
+  }
+
+  .w-third--t {
+    width: 33.33333%;
+  }
+
+  .w-quarter--t {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .lab-share {
+    text-align: right;
+  }
+
+  .w-full--m {
+    width: 100%;
+  }
+
+  .w-three-quarters--m {
+    width: 75%;
+  }
+
+  .w-two-thirds--m {
+    width: 66.66666%;
+  }
+
+  .w-half--m {
+    float: left;
+    width: 50%;
+  }
+
+  .w-third--m {
+    width: 33.33333%;
+  }
+
+  .w-quarter--m {
+    width: 25%;
+  }
+}

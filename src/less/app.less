@@ -6,11 +6,32 @@
 @font-family: 'Open Sans', sans-serif;
 @font-size: 13px;
 
-// default styles
-*, *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+// http://meyerweb.com/eric/tools/css/reset/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
 }
 body {
 	padding: 0;
@@ -20,32 +41,6 @@ body {
 	font-size: @font-size;
 }
 
-button:focus {
-	outline: none
-}
-
-h1, h2, h3, h4, h5, h6 {
-	padding: 0;
-	margin: 0;
-	text-transform: uppercase;
-}
-
-h2 {
-	font-size: 50px;
-	margin-bottom: 58px;
-}
-
-h3 {
-	font-size: 25px;
-	margin-bottom: 28px;
-}
-
-a {
-	text-decoration: none;
-}
-.pull-right {
-  float: right;
-}
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -58,6 +53,43 @@ a {
   flex: 1 0 auto;
   width: 33%;
 }
+
+/**
+ * BOX HACKING
+ */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// CLEAR FLOATS
+
+.cf:after,
+.lab-grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// CONTENT WRAPPER
+ 
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  max-width: 1500px;
+  overflow: auto;
+}
+
 // import less files
 @import "responsive" ;
 @import "iconmoon";
@@ -120,4 +152,20 @@ div#logo {
       align-items: center;
       justify-content: center;
     }
+}
+
+section.section-hero {
+  margin-bottom: 90px;
+}
+
+figure .img-zoom-in {
+    width: 156px;
+    height: 156px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+figcaption {
+  font-weight: 600;
+  text-transform: uppercase;
 }

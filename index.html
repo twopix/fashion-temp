@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 
 <head>
     <meta charset="UTF-8" />
@@ -53,42 +53,134 @@
                 </div>
             </div>
         </header>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <!-- alert  -->
+        <div id="top-info-alert" class="alert alert-warning alert-dismissible fade show" role="alert">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur tellus a turpis vehicula porttitor
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">X</span>
             </button>
         </div>
+        <!-- slider  -->
         <section class="section-hero">
             <div class="slider">
                 <div>
-                    <div class="image">
-                        <img src="/src/Images/1920x500_1.jpg" alt="Image slide 1"/>
-                    </div>
+                    <picture class="image">
+                        <source media="(max-width: 465px)" srcset="/src/Images/Mobile_1.jpg">
+                        <img src="/src/Images/1920x500_1.jpg" alt="Collection Fall-Winter">
+                    </picture>
                 </div>
                 <div>
-                    <div class="image">
-                        <img src="/src/Images/1920x500_2.jpg" alt="Image slide 2"/>
-                    </div>
+                    <picture class="image">
+                        <source media="(max-width: 465px)" srcset="/src/Images/Mobile_2.jpg">
+                        <img src="/src/Images/1920x500_2.jpg" alt="Super Deals '19 ">
+                    </picture>
                 </div>
             </div>
         </section>
-    </div>
-    <div id="message">
+        <!-- popular categories -->
+        <section id="popular-categories" class="cf">
+            <h2 class="title text-center">ΔΗΜΟΦΙΛΕΙΣ ΚΑΤΗΓΟΡΙΕΣ</h2>
+            <div class="wrapper">
+                <figure class="lab-grid-cell w-quarter--t w-half--m">
+                    <div class="img-zoom-in ">
+                        <img src="/src/Images/156x156_1.jpg" class="figure-img rounded"
+                        alt="Category 1">
+                    </div>
+                    <figcaption class="text-center">Category 1</figcaption>
+                </figure>
+                <figure class="lab-grid-cell w-quarter--t w-half--m">
+                    <div class="img-zoom-in ">
+                        <img src="/src/Images/156x156_2.jpg" class="figure-img rounded"
+                        alt="γυναικεια παπουτσια">
+                    </div>
+                    <figcaption class="text-center">γυναικεια παπουτσια</figcaption>
+                </figure>
+                <figure class="lab-grid-cell w-quarter--t w-half--m">
+                    <div class="img-zoom-in ">
+                        <img src="/src/Images/156x156_3.jpg" class="figure-img rounded"
+                        alt="γυναικειεσ τσαντεσ">
+                    </div>
+                    <figcaption class="text-center">γυναικειεσ τσαντεσ</figcaption>
+                </figure>
+                <figure class="lab-grid-cell w-quarter--t w-half--m">
+                    <div class="img-zoom-in ">
+                        <img src="/src/Images/156x156_4.jpg" class="figure-img rounded"
+                        alt="γυναικεια αξεσουαρ">
+                    </div>
+                    <figcaption class="text-center">γυναικεια αξεσουαρ</figcaption>
+                </figure>
+                <figure class="lab-grid-cell w-quarter--t w-half--m">
+                    <div class="img-zoom-in ">
+                        <img src="/src/Images/156x156_5.jpg" class="figure-img rounded"
+                        alt="ανδρικα ρουχα">
+                    </div>
+                    <figcaption class="text-center">ανδρικα ρουχα</figcaption>
+                </figure>
+                <figure class="lab-grid-cell w-quarter--t w-half--m">
+                    <div class="img-zoom-in ">
+                        <img src="/src/Images/156x156_6.jpg" class="figure-img rounded"
+                        alt="ανδρικα παπουτσια">
+                    </div>
+                    <figcaption class="text-center">ανδρικα παπουτσια</figcaption>
+                </figure>
+                <figure class="lab-grid-cell w-quarter--t w-half--m">
+                    <div class="img-zoom-in ">
+                        <img src="/src/Images/156x156_7.jpg" class="figure-img rounded"
+                        alt="ανδρικεσ τσαντεσ">
+                    </div>
+                    <figcaption class="text-center">ανδρικεσ τσαντεσ</figcaption>
+                </figure>
+                <figure class="lab-grid-cell w-quarter--t w-half--m">
+                    <div class="img-zoom-in ">
+                        <img src="/src/Images/156x156_1.jpg" class="figure-img rounded"
+                        alt="ανδρικα αξεσουαρ">
+                    </div>
+                    <figcaption class="text-center">ανδρικα αξεσουαρ</figcaption>
+                </figure>
+            </div>
+        </section>
+        <section  class="cf">
+            <pre>
 
+                
+
+
+
+
+
+
+            empty space
+
+
+
+
+
+
+
+
+
+            </pre>
+        </section>
     </div>
     
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-        $('.slider').slick({
+    $(document).ready(function () {
+
+            $("button.close").click(function (e) {
+                e.stopPropagation();
+                $(this).parent().hide(100);
+            });
+            $('.slider').slick({
                 dots: true,
                 infinite: true,
                 speed: 500,
                 fade: true,
                 cssEase: 'linear'
-           });
+            });
+        });
     </script>
 </body>
 </html>
