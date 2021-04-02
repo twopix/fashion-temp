@@ -3,6 +3,7 @@
 @color-primary: #EC826D;
 @color-primary-hover: #FC9D8A;
 @color-primary-light: #FCF0EE;
+@color-light-gray: #F2F2F5;
 @font-family: 'Open Sans', sans-serif;
 @font-size: 13px;
 
@@ -83,7 +84,7 @@ html {
 .wrapper {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 1.5em;
+  padding-top: 0;
   padding-right: 1.5em;
   padding-left: 1.5em;
   max-width: 1500px;
@@ -101,8 +102,13 @@ div#logo {
     margin: 24px auto;
     text-align: center;
 }
+@media (max-width: 767px) { 
+  div#logo {
+    margin-top: 33px;
+  }
+}
 
-.top-bar {    
+#top-bar {    
   font-family: @font-family;
   font-size: 10px;
   letter-spacing: 1.6px;
@@ -153,6 +159,14 @@ div#logo {
       align-items: center;
       justify-content: center;
     }
+}
+
+
+// Phones only
+@media (max-width: 767px) { 
+  .header-icon {margin: 30px 10px 0 0;}
+  .header-icon li.menu-item {margin-right: 10px;font-size: 16px;}
+  
 }
 
 section.section-hero {

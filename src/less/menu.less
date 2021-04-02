@@ -80,11 +80,6 @@
     z-index: 999;
 }
 
-.hs-menubar.fixed {
-    top:0;
-    transition: top 0.2s ease-in-out;
-}
-
 .hs-menubar.sticky {
     position: fixed;
     top: 35px;
@@ -92,16 +87,25 @@
     transition: top 0.2s ease-in-out;
 }
 
+.hs-menubar.fixed {
+    top:0;
+    transition: top 0.2s ease-in-out;
+}
+
 .hs-navigation {
     width: 270px;
     height: 100vh;
-    background: #666;
-    position: fixed;
-    top: 50px;
-    left: -320px;
+    background:white;
+    position: absolute;
+    // top: 87px;
+    left: -100%;
     z-index: 999;
     overflow: hidden;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+// Phones only
+@media (max-width: 767px) {
+ .hs-navigation {width: 100%;}
 }
 
 .hs-navigation.open {
@@ -114,6 +118,7 @@
     -webkit-transition: .6s;
     -moz-transition: .6s;
 }
+
 
 
 .menu-trigger {
@@ -428,10 +433,10 @@ button.search-submit:disabled {
 
 /* Nav Links */
 
-.nav-links {
+.nav-links, {
     list-style: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.9);
+    color: @dark-grey;
 }
 
 .nav-links .its-parent,
@@ -439,12 +444,12 @@ button.search-submit:disabled {
     display: block;
     padding: 10px;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.9);
+    color: @dark-grey;
 }
 
 .nav-links .its-parent:hover,
 .nav-links li a:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: @color-light-gray;
 }
 
 .nav-links .icon {
@@ -477,8 +482,8 @@ button.search-submit:disabled {
 }
 
 .its-parent:after {
-    content: "\f2f9";
-    font-family: Material-Design-Iconic-Font;
+    content: "\e903";
+    font-family: 'icomoon';
     float: right;
     margin-right: 20px;
     transition: .4s;
@@ -486,14 +491,29 @@ button.search-submit:disabled {
 }
 
 .its-parent.downed {
-    background: rgba(0, 0, 0, 0.1);
+    background: @color-light-gray;
 }
 
 .its-parent.downed:after {
-    transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(360deg);
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(180deg);
     transition: .4s;
     -webkit-transition: .4s;
     -moz-transition: .4s;
+}
+
+.nav-footer-menu {
+    list-style: none;
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+
+    li {
+        line-height: 30px;
+    }
+
+    li a:hover {
+        color: @color-primary-hover;
+    }
 }

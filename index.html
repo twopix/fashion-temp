@@ -16,14 +16,20 @@
 
 <body>
     <div class="site-container">
+        <!-- top-bar slider -->
         <div id="top-bar" class="top-bar">
-            <div class="text-white">δωρεαν μεταφορικα για αγορεσ ανω των 50€ | δωρεαν επιστροφεσ | Τηλ. παραγγελιεσ +30 210 000 0000</div>
+            <div class="text-white top-bar-slider wrapper">
+                <div>δωρεαν μεταφορικα για αγορεσ ανω των 50€</div>
+                <div>δωρεαν επιστροφεσ </div>
+                <div>Τηλ. παραγγελιεσ +30 210 000 0000</div>
+            </div>
         </div>
+        <!-- sticky header -->
         <header class="site-header hs-menubar sticky">
             <div class="container mid-bar">
-                <div id="site-navigation" class="site-nav item"> 
+                <div id="site-navigation" class="site-nav lab-grid-cell w-third--d w-quarter--m"> 
                     <div class="site-nav-wrapper menu-trigger">
-                        <span class="toggle-nav visible-phone" data-target="mobile-menu">
+                        <span class="toggle-nav visible-tablet visible-phone" data-target="mobile-menu">
                             <span class="icon-nav"></span>
                         </span> 
                         <span class="toggle-nav visible-desktop" data-target="primary-menu">
@@ -32,48 +38,51 @@
                     </div>
                     <nav class="hs-navigation">
                         <ul class="nav-links">
-                            <li><a href="#">ΑΝΔΡΑΣ</a></li>
-                            <li><a href="#">ΠΑΙΔΙ</a></li>
-                            <li><a href="#">ΜΑΡΚΕΣ</a></li>
-                            <li><a href="#">ΝΕΕΣ ΑΦΙΞΕΙΣ</a></li>
-                            <li><a href="#">ΠΡΟΣΦΟΡΕΣ</a></li>
+                            <li><a href="#4">ΑΝΔΡΑΣ</a> </li>
                             <li class="has-child">
-                                <a href="#" data-submenu="woman">ΓΥΝΑΙΚΑ</a>
-                                <div id="woman" class="submenu">
-                                    <div class="submenu-header">
-                                        <a href="#" data-submenu-close="woman">Main Menu</a>
-                                    </div>                    
-                                    <label>ΓΥΝΑΙΚΑ</label>
-                                    <ul class="its-children">
-                                        <li><a href="#">Όλα (234) </a></li>
-                                        <li><a href="#">Προσφορές </a></li>
-                                        <li><a href="#">Νέες Αφίξεις </a></li>
-                                        <li><a href="#">Παπούτσια </a></li>
-                                        <li><a href="#">Αξεσουάρ</a></li>
-                                        <li><a href="#">Παντελόνια</a></li>
-                                        <li><a href="#">Μπλούζες</a></li>
-                                        <li><a href="#">Τσάντες</a></li>
-                                        <li><a href="#">Φορέματα</a></li>
-                                        <li><a href="#">Jackets</a></li>
-                                    </ul>
-                                </div>
+                                <span class="its-parent">ΓΥΝΑΙΚΑ</span>
+                                <ul class="its-children">
+                                    <li><a href="#1"> Sub Item 1.1 </a> </li>
+                                    <li class="has-child">
+                                        <span class="its-parent"> Item 1.2 has child</span>
+                                        <ul class="its-children">
+                                            <li> <a href="#1">Child Item 1.2.1 </a> </li>
+                                            <li> <a href="#1"> Child Item 1.2.2 </a> </li>
+                                            <li> <a href="#1"> Child Item 1.2.3 </a> </li>
+                                        </ul>
+                                    </li>
+                                    <li> <a href="#1"> Sub Item 1.3 </a> </li>
+                                    <li> <a href="#1"> Sub Item 1.4 </a></li>
+                                </ul>
                             </li>
-        
+                            <li> <a href="#4">ΠΑΙΔΙ </a> </li>
+                            <li> <a href="#4">ΜΑΡΚΕΣ </a> </li>
+                            <li> <a href="#4">ΝΕΕΣ </a> </li>
+                            <li> <a href="#4">ΑΦΙΞΕΙΣ </a> </li>
+                            <li> <a href="#4">ΠΡΟΣΦΟΡΕΣ</a></li>
+                            <!--//has-child-->
                         </ul>
-                    </nav>
-
-                    
+                        
+                        <!-- menu footer menu -->
+                        <ul class="nav-footer-menu">
+                            <li><a href="#6">Η Εταιρεία</a></li>
+                            <li><a href="#6">Καταστήματα </a></li>
+                            <li><a href="#6">Get the look </a></li>
+                            <li><a href="#6">Combos</a></li>
+                        </ul>
+                    </nav>             
                 </div>
-                <div class="desktop-logo-wrapper item">
+                <div class="desktop-logo-wrapper lab-grid-cell w-third--d w-third--m">
                     <div id="logo">
                         <a href="/">
                             <img src="/src/images/logo.png"
+                                class="img-responsive"
                                 srcset="/src/images/logo.png 1x, /src/images/logo.png 2x"
                                 width="221" height="28" alt="Fashion Design" title="Fashion Design">
                         </a>
                     </div>
                 </div>
-                <div class="item">
+                <div class="lab-grid-cell w-third--d w-third--m">
                     <div class="header-icon pull-right">
                         <ul class="hidden-xs hidden-sm hidden-md">
                             <li class="menu-item menu-item-account"><a href="#" ><span class="icon icon-user"></span></a></li>
@@ -196,7 +205,6 @@
         </section>
     </div>
     
-    <div class="zeynep-overlay"></div>
     <script src="/src/js/jquery-3.6.0.min.js" ></script>
     <script src="/src/js/slick.min.js"></script>
     <script src="/src/js/jquery.hsmenu.min.js"></script>
@@ -219,6 +227,45 @@
             $(this).parent().hide(100);
         });
         
+        // top-bar slider 
+        $('.top-bar-slider').slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        centerMode: true,
+                        respondTo: 'min',
+                        variableWidth: true,
+                        slidesToShow: 5,
+                        slidesToScroll: 5
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: false
+                    }
+                }
+            ]
+        });
+
         // init slider 
         $('.slider').slick({
             dots: true,
@@ -234,10 +281,7 @@
             outClickToClose: true,
             navControls: false,
             fixedMenubar: false
-
-
         });
-
 
        
      })

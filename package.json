@@ -19,7 +19,6 @@
     "onchange": "^7.1.0"
   },
   "dependencies": {
-    "slick-carousel": "^1.8.1",
-    "zeynepjs": "^2.1.0"
+    "slick-carousel": "^1.8.1"
   }
 }
