@@ -590,6 +590,12 @@ img.img-responsive {
   opacity: 0.75;
   color: black;
 }
+iframe#youtube-player {
+  margin: auto;
+  text-align: center;
+  display: block;
+  max-width: 100%;
+}
 /* zoom */
 .img-zoom-in {
   display: block;
