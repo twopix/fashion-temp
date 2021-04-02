@@ -19,10 +19,10 @@
         <div id="top-bar" class="top-bar">
             <div class="text-white">δωρεαν μεταφορικα για αγορεσ ανω των 50€ | δωρεαν επιστροφεσ | Τηλ. παραγγελιεσ +30 210 000 0000</div>
         </div>
-        <header class="site-header">
+        <header class="site-header hs-menubar sticky">
             <div class="container mid-bar">
                 <div id="site-navigation" class="site-nav item"> 
-                    <div class="site-nav-wrapper">
+                    <div class="site-nav-wrapper menu-trigger">
                         <span class="toggle-nav visible-phone" data-target="mobile-menu">
                             <span class="icon-nav"></span>
                         </span> 
@@ -30,21 +30,21 @@
                             <span class="icon-nav"></span>
                         </span>
                     </div>
-                    <nav class="zeynep">
-                        <ul>
+                    <nav class="hs-navigation">
+                        <ul class="nav-links">
                             <li><a href="#">ΑΝΔΡΑΣ</a></li>
                             <li><a href="#">ΠΑΙΔΙ</a></li>
                             <li><a href="#">ΜΑΡΚΕΣ</a></li>
                             <li><a href="#">ΝΕΕΣ ΑΦΙΞΕΙΣ</a></li>
                             <li><a href="#">ΠΡΟΣΦΟΡΕΣ</a></li>
-                            <li class="has-submenu">
+                            <li class="has-child">
                                 <a href="#" data-submenu="woman">ΓΥΝΑΙΚΑ</a>
                                 <div id="woman" class="submenu">
                                     <div class="submenu-header">
                                         <a href="#" data-submenu-close="woman">Main Menu</a>
                                     </div>                    
                                     <label>ΓΥΝΑΙΚΑ</label>
-                                    <ul>
+                                    <ul class="its-children">
                                         <li><a href="#">Όλα (234) </a></li>
                                         <li><a href="#">Προσφορές </a></li>
                                         <li><a href="#">Νέες Αφίξεις </a></li>
@@ -199,9 +199,19 @@
     <div class="zeynep-overlay"></div>
     <script src="/src/js/jquery-3.6.0.min.js" ></script>
     <script src="/src/js/slick.min.js"></script>
-    <script src="/src/js/zeynep.min.js"></script>
+    <script src="/src/js/jquery.hsmenu.min.js"></script>
     <script>
     $(function () {
+        // sticky menu
+        var stickyOffset = $('.sticky').offset().top;
+
+        $(window).scroll(function () {
+            var sticky = $('.sticky'),
+                scroll = $(window).scrollTop();
+
+            if (scroll >= stickyOffset) sticky.addClass('fixed');
+            else sticky.removeClass('fixed');
+        });
 
         // close alert
         $("button.close").click(function (e) {
@@ -218,33 +228,18 @@
             cssEase: 'linear'
         });
 
-        // init zeynepjs side menu
-        var zeynep = $('.zeynep').zeynep({
-            opened: function () {
-                // log
-                console.log('the side menu opened')
-            },
-            closed: function () {
-                // log
-                console.log('the side menu closed')
-            }
-        })
+        // menu
+        $(".hs-menubar").hsMenu({
+            bgFading: false,
+            outClickToClose: true,
+            navControls: false,
+            fixedMenubar: false
 
-        // dynamically bind 'closing' event
-        zeynep.on('closing', function () {
-            // log
-            console.log('this event is dynamically binded')
-        })
 
-        // handle zeynepjs overlay click
-        $('.zeynep-overlay').on('click', function () {
-            zeynep.close()
-        })
+        });
 
-        // open zeynepjs side menu
-        $('.toggle-nav').on('click', function () {
-            zeynep.open()
-        })
+
+       
      })
     </script>
 </body>
