@@ -7,7 +7,9 @@
     padding: 3px 0;
     border-right: 1px solid #E7E7E7;
 }
-
+// @media (max-width: 979px)  {
+//     .site-nav-wrapper { border-right: none; }
+// }
 
 .toggle-nav {
     color: #000;
@@ -16,15 +18,20 @@
     width: auto;
     height: @icon-height;
     cursor: pointer;
-    margin: 0 40px 0 0;
-    vertical-align: top;
+    vertical-align: middle;
 
+    &.visible-desktop {
+    margin: 0 40px 0 0;
+    }
+    &:after  {
+        content: "";
+        margin-left: @icon-width + 20px;
+        line-height: @icon-height;
+        font-size: 11px;
+        letter-spacing: .3rem;
+    }
     &.visible-desktop:after {
     content: "MENU";
-    margin-left: @icon-width + 20px;
-    line-height: @icon-height;
-    font-size: 11px;
-    letter-spacing: .3rem;
     }
 
     .icon-nav {
