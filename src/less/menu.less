@@ -3,7 +3,7 @@
 
 .site-nav-wrapper {
     display: inline-block;
-    margin:  22px 36px;
+    margin:  25px 36px;
     padding: 3px 0;
     border-right: 1px solid #E7E7E7;
 }
@@ -84,7 +84,13 @@
     position: fixed;
     top: 35px;
     left: 0;
-    transition: top 0.2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 2px 1px rgb(0 0 0 / 19%);
+    -moz-box-shadow: 0 0 2px 1px rgba(0,0,0,.19);
+    -webkit-box-shadow: 0 0 2px 1px rgb(0 0 0 / 19%);
 }
 
 .hs-menubar.fixed {
@@ -538,6 +544,9 @@ button.search-submit:disabled {
     .its-children.third-level-menu
     { 
         background-color: white !important;
+    }
+    .third-level-menu li > a:hover {
+        color: @color-primary
     }
 
 }

@@ -120,6 +120,25 @@ body {
   flex: 1 0 auto;
   width: 33%;
 }
+.site-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #151517;
+  opacity: 0.6;
+  z-index: 100;
+  overflow-y: hidden;
+}
+.site-overlay.visible {
+  display: block;
+}
+.no-scroll {
+  overflow: hidden;
+}
 /**
  * BOX HACKING
  */
@@ -532,7 +551,7 @@ img.img-responsive {
 }
 .slick-dots {
   position: absolute;
-  bottom: -25px;
+  bottom: 20px;
   display: block;
   width: 100%;
   padding: 0;
@@ -543,7 +562,7 @@ img.img-responsive {
 .slick-dots li {
   position: relative;
   display: inline-block;
-  width: 20px;
+  width: 39px;
   height: 20px;
   margin: 0 5px;
   padding: 0;
@@ -553,14 +572,14 @@ img.img-responsive {
   font-size: 0;
   line-height: 0;
   display: block;
-  width: 20px;
-  height: 20px;
-  padding: 5px;
+  width: 40px;
+  height: 2px;
   cursor: pointer;
   color: transparent;
   border: 0;
   outline: none;
-  background: transparent;
+  background: white;
+  opacity: 0.4;
 }
 .slick-dots li button:hover,
 .slick-dots li button:focus {
@@ -586,6 +605,9 @@ img.img-responsive {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.slick-dots li.slick-active button {
+  opacity: 1;
+}
 .slick-dots li li.slick-active button:before {
   opacity: 0.75;
   color: black;
@@ -608,7 +630,7 @@ iframe#youtube-player {
 }
 .site-nav-wrapper {
   display: inline-block;
-  margin: 22px 36px;
+  margin: 25px 36px;
   padding: 3px 0;
   border-right: 1px solid #E7E7E7;
 }
@@ -679,7 +701,13 @@ iframe#youtube-player {
   position: fixed;
   top: 35px;
   left: 0;
-  transition: top 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.19);
 }
 .hs-menubar.fixed {
   top: 0;
@@ -1051,6 +1079,9 @@ button.search-submit:disabled {
   .its-children.third-level-menu {
     background-color: white !important;
   }
+  .third-level-menu li > a:hover {
+    color: #EC826D;
+  }
 }
 .nav-footer-menu {
   list-style: none;
@@ -1131,6 +1162,7 @@ div#logo {
 }
 section.section-hero {
   margin-bottom: 90px;
+  background-color: #F2F2F5;
 }
 figure .img-zoom-in {
   width: 156px;
