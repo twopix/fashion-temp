@@ -44,7 +44,7 @@
                                 <a class="its-parent">ΓΥΝΑΙΚΑ</a>
                                 <ul class="its-children second-level-menu">
                                     <li><div class="menu-item-title"> ΓΥΝΑΙΚΑ</div></li>
-                                    <li> <a href="#1">Όλα (234)</a> </li>
+                                    <li> <a href="#1">Όλα (525)</a> </li>
                                     <li> <a href="#1">Προσφορές </a> </li>
                                     <li> <a href="#1">Νέες Αφίξεις </a> </li>
                                     <li class="has-child">
@@ -97,6 +97,7 @@
                     </div>
                 </div>
                 <div class="lab-grid-cell w-third--d w-third--m">
+
                     <div class="header-icon pull-right">
                         <ul class="hidden-xs hidden-sm hidden-md">
                             <li class="menu-item menu-item-account"><a href="#" ><span class="icon icon-user"></span></a></li>
@@ -105,6 +106,14 @@
                                     <span class="icon icon-bag"></span>
                                     <span class="count cart-counter">3</span> </a></li>
                         </ul> 
+                    </div>
+                    <div class="header-search pull-right input-group top-search-form hidden-phone">
+                        <div class="header-search-wrapper">
+                            <input class="form-control" type="text" placeholder="ΑΝΑΖΗΤΗΣΗ..." aria-label="Search">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="icon icon-search"></i></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -208,6 +217,14 @@
 
 
 
+
+
+
+
+
+
+
+
             empty space
 
 
@@ -229,15 +246,49 @@
     <script>
     $(function () {
         // sticky menu
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
         var stickyOffset = $('.sticky').offset().top;
+        
 
         $(window).scroll(function () {
             var sticky = $('.sticky'),
                 scroll = $(window).scrollTop();
-
+            didScroll = true;
             if (scroll >= stickyOffset) sticky.addClass('fixed');
             else sticky.removeClass('fixed');
         });
+
+        setInterval(function () {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+
+            // Make sure they scroll more than delta
+            if (Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight) {
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if (st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+
+            lastScrollTop = st;
+        }
 
         // close alert
         $("button.close").click(function (e) {

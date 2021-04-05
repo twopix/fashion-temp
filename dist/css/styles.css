@@ -713,6 +713,9 @@ iframe#youtube-player {
   top: 0;
   transition: top 0.2s ease-in-out;
 }
+.hs-menubar.sticky.nav-up {
+  top: -87px;
+}
 .hs-navigation {
   width: 270px;
   height: 100vh;
@@ -1116,8 +1119,26 @@ div#logo {
   text-align: center;
   margin-bottom: 85px;
 }
+.header-search input.form-control,
+.header-search .input-group-append {
+  display: inline-block;
+}
+.header-search input.form-control {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+.header-search .header-search-wrapper {
+  padding: 34px;
+  border-right: 1px solid #E7E7E7;
+  border-left: 1px solid #E7E7E7;
+}
 .header-icon {
-  margin: 27px 44px;
+  margin: 27px;
 }
 .header-icon ul {
   list-style: none;

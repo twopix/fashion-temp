@@ -15,7 +15,6 @@ function onYouTubeIframeAPIReady() {
         width: '640',
         videoId: 'M7lc1UVf-VE',
         events: {
-            'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
         }
     });
@@ -40,17 +39,17 @@ function onPlayerStateChange(event) {
 
 slideWrapper.on("beforeChange", function (event, slick) {
     var currentSlide = $('.slider').slick('slickCurrentSlide');
-    console.log("before" + currentSlide);
-    // slick = $(slick.$slider);
+    // console.log("before" + currentSlide);
+    
     player.pauseVideo();
-    // playPauseVideo(slick, "pause");
 });
 slideWrapper.on("afterChange", function (event, slick) {
     var currentSlide = $('.slider').slick('slickCurrentSlide');
-    console.log("after" + currentSlide);
+    console.log("after current" + currentSlide);
     // slick = $(slick.$slider);
     if (currentSlide == 2) {
-        player.playVideo()
+        player.playVideo();
+    } else {
+        player.pauseVideo();
     }
-    // playPauseVideo(slick, "play");
 });
