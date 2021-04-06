@@ -631,9 +631,20 @@ iframe#youtube-player {
 }
 .site-nav-wrapper {
   display: inline-block;
-  margin: 25px 36px;
+  margin: 25px 15px;
   padding: 3px 0;
   border-right: 1px solid #E7E7E7;
+}
+i.toggle-nav:after {
+  margin-left: 30px;
+}
+i.toggle-nav.active {
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+i.toggle-nav.active .icon-nav {
+  width: 20px;
 }
 .toggle-nav {
   color: #000;
@@ -734,7 +745,10 @@ iframe#youtube-player {
 }
 @media (max-width: 767px) {
   .hs-navigation {
+    position: fixed;
+    top: 0;
     width: 100%;
+    overflow: auto;
   }
 }
 .hs-navigation.open {
@@ -1147,6 +1161,11 @@ div#logo {
   display: inline-block !important;
   vertical-align: middle;
   font-size: 24px;
+}
+@media only screen and (min-width: 1024px) {
+  .mobile-search {
+    display: none !important;
+  }
 }
 .header-icon {
   margin: 27px;

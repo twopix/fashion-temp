@@ -3,14 +3,26 @@
 
 .site-nav-wrapper {
     display: inline-block;
-    margin:  25px 36px;
+    margin:  25px 15px;
     padding: 3px 0;
     border-right: 1px solid #E7E7E7;
 }
 // @media (max-width: 979px)  {
 //     .site-nav-wrapper { border-right: none; }
 // }
-
+i.toggle-nav {
+    &:after {
+        margin-left: 30px;
+    }
+    &.active {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        .icon-nav {
+            width: 20px;
+        }
+    }
+}
 .toggle-nav {
     color: #000;
     display: inline-block;
@@ -120,7 +132,12 @@
 }
 // Phones only
 @media (max-width: 767px) {
- .hs-navigation {width: 100%;}
+ .hs-navigation {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     overflow: auto;
+    }
 }
 
 .hs-navigation.open {

@@ -45,7 +45,7 @@ slideWrapper.on("beforeChange", function (event, slick) {
 });
 slideWrapper.on("afterChange", function (event, slick) {
     var currentSlide = $('.slider').slick('slickCurrentSlide');
-    console.log("after current" + currentSlide);
+    // console.log("after current" + currentSlide);
     // slick = $(slick.$slider);
     if (currentSlide == 2) {
         player.playVideo();
