@@ -479,6 +479,24 @@ img.img-responsive {
   margin: auto;
   max-width: 100%;
 }
+.slick-caption {
+  background-color: white;
+  text-align: center;
+}
+.slick-caption .slider-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 30px 0;
+  letter-spacing: 2.4px;
+}
+.slick-caption .button {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #151517;
+  min-width: 300px;
+}
 /* Arrows */
 .slick-prev,
 .slick-next {
@@ -1062,7 +1080,7 @@ button.search-submit:disabled {
   content: "\e903";
   font-family: 'icomoon';
   float: right;
-  margin-right: 20px;
+  color: gray;
   transition: 0.4s;
   font-size: 16px;
 }
